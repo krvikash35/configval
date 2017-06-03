@@ -20,7 +20,7 @@ try{
 }
 ```
 
-*** Api ***
+***Api***
 ```
 validateWithSchema(config, configSchema)
 argument: 
