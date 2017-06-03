@@ -27,7 +27,37 @@ try{
 
 **Output**
 ```
+Error: configuration is not as per schema..below are validation error
 
+properties:    app.port
+Description:   Open/Available port on which http server will listen/bind
+Expected Value:   value should be between 4000 and 5000
+Actual Value:    3000
+
+properties:    db.user
+Description:   DB user name, set environment variable NODE_DB_USER
+Expected Value:   should be non-empty string
+Actual Value:    undefined
+
+properties:    db.password
+Description:   DB password, set environment variable NODE_DB_PASSWORD
+Expected Value:   should be non-empty string
+Actual Value:    undefined
+
+properties:    db.server
+Description:   DB hostname/IP, set environment variable NODE_DB_SERVER
+Expected Value:   should be non-empty string
+Actual Value:    undefined
+
+properties:    db.port
+Description:   DB PORT set environment variable NODE_DB_PORT
+Expected Value:   should be non-empty string
+Actual Value:    undefined
+
+properties:    db.database
+Description:   DB NAME set environment variable NODE_DB_DATABASE
+Expected Value:   should be non-empty string
+Actual Value:    undefined
 ```
 
 **Api**
