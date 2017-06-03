@@ -1,0 +1,33 @@
+{
+  "name": "config-validator",
+  "version": "1.0.0",
+  "description": "validate configuration object againt given configuration schema",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krvikash35/configValidator.git"
+  },
+  "keywords": [
+    "configuration",
+    "schema",
+    "configuration",
+    "validation",
+    "validate",
+    "configuration"
+  ],
+  "author": "vikash kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krvikash35/configValidator/issues"
+  },
+  "homepage": "https://github.com/krvikash35/configValidator#readme",
+  "devDependencies": {
+    "tap": "^10.3.3"
+  }
+}
