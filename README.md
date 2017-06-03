@@ -2,13 +2,13 @@
 [![Build Status](https://travis-ci.org/krvikash35/configValidator.svg?branch=master)](https://travis-ci.org/krvikash35/configValidator)
 [![Coverage Status](https://coveralls.io/repos/github/krvikash35/configValidator/badge.svg)](https://coveralls.io/github/krvikash35/configValidator)
 # configval
-npm module that will validate given configuration object against given configuration schema. each property will be validated against
+simple, small yet fast and powerfull, npm module that will validate given configuration object against given configuration schema. each property will be validated against
 its schema defintion, and if any property is invalid as per definition then error message will be aggregated for all such property.
 this aggregated error message will be shown on console in proper format.
 
 **Installation**
 ```
-npm install config-validator
+npm install configval
 ```
 
 **Basic Usage**
