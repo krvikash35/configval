@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/krvikash35/configValidator.svg?branch=master)](https://travis-ci.org/krvikash35/configValidator)
 # configValidator
-npm module that will validate given configuration object against given configuration schema.
+npm module that will validate given configuration object against given configuration schema. each property will be validated against
+its schema defintion, and if any property is invalid as per definition then error message will be aggregated for all such property.
+this aggregated error message will be shown on console in proper format.
 
 **Installation**
 ```
@@ -32,7 +34,7 @@ output:
     throw error with proper message, if configuraiton object is not as per configuration schema.
 ```
 
-**Configuration Schema Format**
+# Configuration Schema Format
 schema should be an array of property validation rule and each property validation rule should be an array of attribute.
 ```
 schema format
@@ -57,6 +59,23 @@ var myConfigSchema =
     ["db.pool.idleTimeoutMillis", "NUMBER", "idle time in millisecond till connection is closed and moved from pool, if not sure give 30000"],
 ]
 ```
+** Inbuilt Validator **
+```
+NUMBER  ->   it will check if property value is non-empty number
+STRING  ->   it will check if property value is non-empty string
+BOOLEAN ->   it will check if property value is of type boolean
+```
 
-
+**Custom validator**
+you can attach your own custom validation against any property validation rule. if custom validation is provided, then inbuilt 
+validator will not be applied againt that particular property. At time of validation each custom validator function will be called with actual value of its corresponding property. custom validator should check if value is as per their requirement, if not, it must throw 
+error with proper message. Below are general format of custom validator function.
+```
+var custPortValidator = function(configPropValue){
+    //write your own logic here as mentioned below
+    if( configPropValue > 200 || configPropValue <100){
+        throw new Error('value must be between 100 and 200');
+    }
+}
+```
 
