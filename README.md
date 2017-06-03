@@ -67,6 +67,7 @@ BOOLEAN ->   it will check if property value is of type boolean
 ```
 
 **Custom validator**
+
 you can attach your own custom validation against any property validation rule. if custom validation is provided, then inbuilt 
 validator will not be applied againt that particular property. At time of validation each custom validator function will be called with actual value of its corresponding property. custom validator should check if value is as per their requirement, if not, it must throw 
 error with proper message. Below are general format of custom validator function.
