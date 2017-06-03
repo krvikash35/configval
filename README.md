@@ -1,4 +1,5 @@
-# configValidator[![Build Status](https://travis-ci.org/krvikash35/configValidator.svg?branch=master)](https://travis-ci.org/krvikash35/configValidator)
+[![Build Status](https://travis-ci.org/krvikash35/configValidator.svg?branch=master)](https://travis-ci.org/krvikash35/configValidator)
+# configValidator
 npm module that will validate given configuration object against given configuration schema.
 
 **Installation**
