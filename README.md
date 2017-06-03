@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/krvikash35/configValidator.svg?branch=master)](https://travis-ci.org/krvikash35/configValidator)
+[![npm version](https://badge.fury.io/js/configval.svg)](http://badge.fury.io/js/configval)
 # configValidator
 npm module that will validate given configuration object against given configuration schema. each property will be validated against
 its schema defintion, and if any property is invalid as per definition then error message will be aggregated for all such property.
