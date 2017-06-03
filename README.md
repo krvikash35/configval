@@ -60,6 +60,8 @@ var myConfigSchema =
 ]
 ```
 **Inbuilt Validator**
+
+Inbuilt validator are simple type chekcing validation. As of now, only 3 inbuilt validation is supported.
 ```
 NUMBER  ->   it will check if property value is non-empty number
 STRING  ->   it will check if property value is non-empty string
