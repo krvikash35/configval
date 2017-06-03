@@ -59,7 +59,7 @@ var myConfigSchema =
     ["db.pool.idleTimeoutMillis", "NUMBER", "idle time in millisecond till connection is closed and moved from pool, if not sure give 30000"],
 ]
 ```
-** Inbuilt Validator **
+**Inbuilt Validator**
 ```
 NUMBER  ->   it will check if property value is non-empty number
 STRING  ->   it will check if property value is non-empty string
