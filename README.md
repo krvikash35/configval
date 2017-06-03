@@ -24,6 +24,11 @@ try{
 }
 ```
 
+**Output**
+```
+
+```
+
 **Api**
 ```
 validateWithSchema(config, configSchema)
