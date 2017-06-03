@@ -1,6 +1,17 @@
 var tap = require('tap');
 var cv = require('../index');
 
+tap.test('VALID SCEMA AND VALID CONFIGURATION: when config object is as per schema', function(t){
+    let cs = [ ['app.port', 'NUMBER', 'app port on which it bind/listen']];
+    let c = {app: { port: 5000 }, db:{ } }
+    try{
+        cv.validateWithSchema(c, cs)
+    }catch(e){
+        t.notOk(e, 'should not throw any error')
+    }
+    t.end()  
+})
+
 tap.test('INVALID SCHEMA: when schema is non-array', function(t){
     let cs = {};
     let c = {app: { port: 3000 }, db:{ pool: { min: 2, max:10 } } }
@@ -12,7 +23,6 @@ tap.test('INVALID SCHEMA: when schema is non-array', function(t){
         actual = e.message;
     }
     t.equal( actual, expect, "error message should be expected one");
-    t.ok(actual)
     t.end()
 })
 
@@ -133,7 +143,6 @@ tap.test('INVALID CONFIG: one of config property is non-number but should be num
         cv.validateWithSchema(c, cs)
     }catch(e){
         actual = e.message;
-        console.log(actual)
     }
     t.equal( actual, expect, 'should throw proper error message ');
     t.end()
@@ -149,7 +158,6 @@ tap.test('INVALID CONFIG: one of config property is non-string but should be str
         cv.validateWithSchema(c, cs)
     }catch(e){
         actual = e.message;
-        console.log(actual)
     }
     t.equal( actual, expect, 'should throw proper error message ');
     t.end()
@@ -165,7 +173,6 @@ tap.test('INVALID CONFIG: one of config property is non-boolean but should be bo
         cv.validateWithSchema(c, cs)
     }catch(e){
         actual = e.message;
-        console.log(actual)
     }
     t.equal( actual, expect, 'should throw proper error message ');
     t.end()
@@ -174,19 +181,18 @@ tap.test('INVALID CONFIG: one of config property is non-boolean but should be bo
 
 tap.test('INVALID CONFIG: one of config property is using custom validator', function(t){
     let customVal = function(value){
-        if( value>3000 && value<2000){
+        if( value>3000 || value<2000){
             throw new Error('value should be between 2000 and 3000')
         }
     }
     let cs = [ ['app.port', 'BOOLEAN', 'app port on which it bind/listen', customVal]];
     let c = {app: { port: 5000 }, db:{ } }
-    let expect = `configuration is not as per schema..below are validation error\n\nproperties:    app.port\nDescription:   app port on which it bind/listen \nExpected Value:   should be boolean type \nActual Value:    3000\n\n`
+    let expect = `configuration is not as per schema..below are validation error\n\nproperties:    app.port\nDescription:   app port on which it bind/listen \nExpected Value:   value should be between 2000 and 3000\nActual Value:    5000\n\n`
     let actual;
     try{
         cv.validateWithSchema(c, cs)
     }catch(e){
         actual = e.message;
-        console.log(actual)
     }
     t.equal( actual, expect, 'should throw proper error message ');
     t.end()
