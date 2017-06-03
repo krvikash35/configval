@@ -7,7 +7,7 @@ npm module that will validate given configuration object against given configura
 npm install config-validator
 ```
 
-***Basic Usage***
+**Basic Usage**
 ```
 const config        = require('./config/config');
 const configSchema  = require('./config/configSchema');
@@ -21,7 +21,7 @@ try{
 }
 ```
 
-***Api***
+**Api**
 ```
 validateWithSchema(config, configSchema)
 argument: 

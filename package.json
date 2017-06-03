@@ -1,5 +1,5 @@
 {
-  "name": "config-validator",
+  "name": "configval",
   "version": "1.0.0",
   "description": "validate configuration object againt given configuration schema",
   "main": "index.js",
@@ -29,5 +29,6 @@
   "homepage": "https://github.com/krvikash35/configValidator#readme",
   "devDependencies": {
     "tap": "^10.3.3"
-  }
+  },
+  "dependencies": {}
 }
