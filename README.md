@@ -1,5 +1,5 @@
 [![npm version](https://badge.fury.io/js/configval.svg)](http://badge.fury.io/js/configval)
-[![Build Status](https://travis-ci.org/krvikash35/configValidator.svg?branch=master)](https://travis-ci.org/krvikash35/configValidator)
+[![Build Status](https://travis-ci.org/krvikash35/configval.svg?branch=master)](https://travis-ci.org/krvikash35/configval)
 [![Coverage Status](https://coveralls.io/repos/github/krvikash35/configValidator/badge.svg)](https://coveralls.io/github/krvikash35/configValidator)
 # configval
 simple, small yet fast and powerfull, npm module that will validate given configuration object against given configuration schema. each property will be validated against
